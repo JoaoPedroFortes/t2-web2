@@ -1,0 +1,50 @@
+@media only screen and (min-width: 720px) {
+
+    #cabecalho {
+        position: fixed;
+        z-index: 1;
+        top: 0;
+    }
+    #content {
+        margin-top: 3.6%;
+        background-color: #f1f1f1 !important;
+      
+    }
+    .card label {
+        font-size: 1vw;
+    }
+    .card-limpo{
+        font-size: 1vw;
+      
+    }
+}
+
+@media only screen and (max-width: 719px) {
+
+    #cabecalho {
+        top: 0;
+    }
+    #conteudo {
+        left: 0 !important;
+        margin-top: 34%;
+        padding: 0 !important;
+        width: 100%;
+    }
+    #navBarra {
+        background-color: #f1f1f1 !important;
+        width: 100% !important;
+        padding: 0 !important;
+     
+    }
+    #app2{
+        background-color: #f1f1f1;
+    }
+}
+
+#btnAdd {
+    position: fixed;
+    right: 40px;
+    bottom: 20px;
+    z-index: 1000;
+
+}
