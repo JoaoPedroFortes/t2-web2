@@ -51,7 +51,7 @@
                 methods: {
                     voltarParaLogin: function () {
                         localStorage.clear();
-                        window.location.pathname = "t2-web2/front/index.html"
+                    window.location.href = "../front/index.html"
                     }
                 }
 
@@ -92,11 +92,17 @@
             el: '#app2',
             data() {
                 return {
-                    user: null
+                    user: null,
+                    login: localStorage.getItem('login'),
+                    senha: localStorage.getItem('senha'),
                 }
             },
 
             mounted() {
+                if (this.login == null) {
+                    window.alert("ops voce precisa estar logado")
+                    window.location.href = "../front/index.html"
+                }
             },
 
             methods: {

@@ -255,11 +255,16 @@
 
 
 
-                axios
-                    .get('http://localhost:8080/api/produto/', { headers: { 'login': this.login, 'senha': this.senha } })
-                    .then(response => {
-                        console.log(response.data), this.produto = response.data
-                    })
+                if (this.login == null) {
+                    window.alert("ops voce precisa estar logado")
+                    window.location.href = "../front/index.html"
+                } else {
+                    axios
+                        .get('http://localhost:8080/api/produto/', { headers: { 'login': this.login, 'senha': this.senha } })
+                        .then(response => {
+                            console.log(response.data), this.produto = response.data
+                        })
+                }
             },
             methods: {
 

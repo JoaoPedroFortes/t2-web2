@@ -56,10 +56,17 @@
                 }
             },
 
+
             mounted() {
 
-                axios
-                    .get('http://localhost:8080/api/pessoa/' + this.id, { headers: { 'login': this.login, 'senha': this.senha } }).then(response => { this.user = response.data })
+                
+                if (this.login == null) {
+                    window.alert("ops voce precisa estar logado")
+                    window.location.href = "../front/index.html"
+                } else {
+                    axios
+                        .get('http://localhost:8080/api/pessoa/' + this.id, { headers: { 'login': this.login, 'senha': this.senha } }).then(response => { this.user = response.data })
+                }
             },
 
             methods: {
@@ -500,7 +507,7 @@
                     //   console.log(inputs)
 
 
-                
+
 
                     for (var j = 0; j < inputs.length; j++) {
                         inputs[j].readOnly = false;
@@ -512,7 +519,7 @@
 
                 },
 
-                manipulaInfoPessoa : function(){
+                manipulaInfoPessoa: function () {
                     const cardLimpo = document.querySelector('.card-limpo');
                     const inputs = cardLimpo.querySelectorAll('.inputs');
                     const tipoPessoa = inputs[0].value
@@ -546,8 +553,8 @@
                         responsavel = 'null'
 
                     }
-                    if (cnpj == ""){
-                        cnpj =='null'
+                    if (cnpj == "") {
+                        cnpj == 'null'
                     }
 
 
