@@ -18,9 +18,9 @@ import javax.persistence.*;
 
 public class PessoaFisica extends Pessoa {
 
-    @Column(name = "PF_CPF")
+    @Column(name = "PF_CPF", nullable = false)
     private String CPF;
-    @Column(name= "PF_RG")
+    @Column(name= "PF_RG", nullable = false)
     private String RG;
 
 }

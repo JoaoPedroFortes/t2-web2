@@ -59,10 +59,10 @@
 
             mounted() {
 
-                
+                console.log(this.login)
                 if (this.login == null) {
                     window.alert("ops voce precisa estar logado")
-                    window.location.href = "../front/index.html"
+                     window.location.href = "../front/index.html"
                 } else {
                     axios
                         .get('http://localhost:8080/api/pessoa/' + this.id, { headers: { 'login': this.login, 'senha': this.senha } }).then(response => { this.user = response.data })

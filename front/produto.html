@@ -396,6 +396,7 @@
                 addCard: function () {
                     $('#barra').hide();
                     $('.card').hide();
+                    $('#menuVertical').hide();
 
                     const cardLimpo = document.querySelector('.card-limpo');
                     cardLimpo.style.display = 'inline';
@@ -417,25 +418,34 @@
                     const cardLimpo = document.querySelector('.card-limpo');
                     const inputs = cardLimpo.querySelectorAll('.inputs');
 
+
                     const descricao = inputs[0].value
+
                     const quantidadeEstoque = inputs[1].value
+
                     const idadePermitida = inputs[2].value
+
                     const precoCompra = inputs[3].value
+
                     const precoVendaFisica = inputs[4].value
+
                     const precoVendaJuridica = inputs[5].value
 
-                    axios.post("http://localhost:8080/api/produto/", {
-                        "descricao": descricao,
-                        "quantidadeEstoque": JSON.parse(quantidadeEstoque),
-                        "idadePermitida": JSON.parse(idadePermitida),
-                        "precoCompra": JSON.parse(precoCompra),
-                        "precoVendaFisica": JSON.parse(precoVendaFisica),
-                        "precoVendaJuridica": JSON.parse(precoVendaJuridica)
-                    }, { headers: { 'login': this.login, 'senha': this.senha } });
 
-                    window.alert("Produto Adicionado!")
-                    location.reload();
-
+                    try {
+                        axios.post("http://localhost:8080/api/produto/", {
+                            "descricao": descricao,
+                            "quantidadeEstoque": JSON.parse(quantidadeEstoque),
+                            "idadePermitida": JSON.parse(idadePermitida),
+                            "precoCompra": JSON.parse(precoCompra),
+                            "precoVendaFisica": JSON.parse(precoVendaFisica),
+                            "precoVendaJuridica": JSON.parse(precoVendaJuridica)
+                        }, { headers: { 'login': this.login, 'senha': this.senha } });
+                        window.alert("Produto Adicionado!")
+                        location.reload();
+                    } catch (e) {
+                        window.alert("preencha todos os campos")
+                    }
                 },
 
                 voltar: function () {

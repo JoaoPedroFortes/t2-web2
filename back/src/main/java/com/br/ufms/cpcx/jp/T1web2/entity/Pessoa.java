@@ -2,6 +2,8 @@ package com.br.ufms.cpcx.jp.T1web2.entity;
 
 import com.br.ufms.cpcx.jp.T1web2.enuns.Situacao;
 import com.br.ufms.cpcx.jp.T1web2.enuns.TipoPessoa;
+import com.sun.istack.NotNull;
+import com.sun.istack.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -29,18 +31,22 @@ public class Pessoa {
     @JoinColumn(name = "PES_RESP_ID")
     private Pessoa responsavel;
 
+    @NotNull
     @Column(name = "PES_TIPO")
     @Enumerated(EnumType.STRING)
     private TipoPessoa tipoPessoa;
 
-    @Column(name = "PES_SITUACAO", nullable = false)
+
+    @Column(name = "PES_SITUACAO")
     private Situacao situacao;
+
 
     @Column(name = "PES_NOME")
     private String nome;
 
     @Column(name = "PES_APELIDO")
     private String apelido;
+
 
     @Column(name = "PES_DATA_NASCIMENTO")
     private LocalDate dataNascimento;

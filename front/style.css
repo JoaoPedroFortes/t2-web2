@@ -1,0 +1,26 @@
+#login_div{
+    border-radius: 2%;
+
+
+}
+h4{
+    color:#f1f1f1 !important;
+}
+
+p{
+    color: white;
+}
+#ola{
+    float: left;
+    margin: 0;
+}
+
+#sair{
+    float: left;
+    margin: 0;
+    color: white;
+}
+
+#invalido{
+    color:red;
+}
